@@ -85,7 +85,7 @@ Mass-radius regime placing GJ 436b among transition planets (warm Neptunes) and 
 
 Clone the repository and install dependencies:
 
-```bash
+bash
 git clone [https://github.com/kevinantonioperezdiaz/GJ436b-Exoplanet-Characterization.git](https://github.com/kevinantonioperezdiaz/GJ436b-Exoplanet-Characterization.git)
 cd GJ436b-Exoplanet-Characterization
 pip install -r requirements.txt
