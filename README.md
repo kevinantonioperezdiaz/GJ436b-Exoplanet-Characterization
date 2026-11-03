@@ -19,19 +19,20 @@ This pipeline models both observational datasets to derive:
 
 ---
 
+## Methodology & Pipeline Architecture
 
-El pipeline realiza el modelado de datos en tres etapas:
+The end-to-end processing pipeline executes in three stages:
 
-1. **Light Curve Modeling:** Aplica modelos analíticos de tránsito considerando coeficientes de oscurecimiento hacia el limbo para extraer parámetros a partir de los flujos fotométricos normalizados del telescopio Spitzer.
-2. **Keplerian Orbital Fitting:** Resuelve numéricamente la ecuación de Kepler sobre las observaciones de velocidad radial en fase para ajustar la órbita excéntrica y minimizar los residuos frente al movimiento de la estrella.
-3. **Physical Parameter Synthesis:** Propaga los parámetros de la estrella anfitriona (M_* = 0.445 M_sun, R_* = 0.437 R_sun, T_eff = 3416 K) junto con los ajustes fotométricos y espectroscópicos para derivar masa, radio, densidad media y entorno de radiación.
+1. **Light Curve Modeling:** Applies analytic transit models with limb-darkening coefficients to determine photometric parameters from normalized Spitzer flux measurements.
+2. **Keplerian Orbital Fitting:** Numerically solves Kepler's equation across phase-folded radial velocity epochs to constrain orbital eccentricity and minimize line-of-sight velocity residuals.
+3. **Physical Parameter Synthesis:** Propagates host star parameters ($M_* = 0.445\,M_\odot$, $R_* = 0.437\,R_\odot$, $T_{\text{eff}} = 3416\,\text{K}$) through photometric and spectroscopic posteriors to compute absolute mass, radius, mean bulk density, and insolation environment.
 
 ---
 
 ## Key Results & Figures
 
 ### 1. Primary Transit Light Curve (Spitzer Space Telescope)
-Normalized 8 µm light curve centered at mid-transit, demonstrating transit depth and ingress/egress profile.
+Normalized 8 $\mu\text{m}$ light curve centered at mid-transit, demonstrating transit depth and ingress/egress profile.
 
 <p align="center">
   <img src="figures/TRANSITO.png" alt="Transit Light Curve" width="650"/>
@@ -73,20 +74,21 @@ Mass-radius regime placing GJ 436b among transition planets (warm Neptunes) and 
 
 ## Repository Structure
 
-- **data/**: Archivos de datos fotométricos de Spitzer (8 µm) y velocidades radiales de Keck/HIRES.
-- **figures/**: Gráficas científicas generadas por el pipeline (curvas de luz, velocidades radiales y clasificación).
-- **exoplanet_analysis.py**: Script principal en Python que ejecuta el modelado orbital, la extracción de parámetros y genera las figuras.
-- **requirements.txt**: Dependencias científicas del proyecto (numpy, scipy, matplotlib).
+- **`data/`**: Space-based transit photometry from Spitzer (8 $\mu\text{m}$) and high-precision radial velocity datasets from Keck/HIRES.
+- **`figures/`**: Generated scientific figures (light curves, phase-folded orbits, mass-radius diagrams, habitable zone boundaries).
+- **`exoplanet_analysis.py`**: Core Python pipeline executing Keplerian orbit solutions, transit extraction, and parameter synthesis.
+- **`requirements.txt`**: Scientific dependencies (`numpy`, `scipy`, `matplotlib`).
 
 ---
 
 ## Installation & Usage
 
-Para ejecutar el pipeline localmente, clona el repositorio e instala las dependencias:
+Clone the repository and install dependencies:
 
-git clone https://github.com/kevinantonioperezdiaz/GJ436b-Exoplanet-Characterization.git  
-cd GJ436b-Exoplanet-Characterization  
-pip install -r requirements.txt  
+```bash
+git clone [https://github.com/kevinantonioperezdiaz/GJ436b-Exoplanet-Characterization.git](https://github.com/kevinantonioperezdiaz/GJ436b-Exoplanet-Characterization.git)
+cd GJ436b-Exoplanet-Characterization
+pip install -r requirements.txt
 
 Ejecución del análisis completo:
 
