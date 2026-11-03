@@ -94,7 +94,7 @@ Ejecución del análisis completo:
 
 python exoplanet_analysis.py  
 
----
+
 
 ## References
 
@@ -102,4 +102,4 @@ python exoplanet_analysis.py
 2. Butler, R. P., et al. (2004). *A Neptune-Mass Planet Orbiting the Nearby M Dwarf GJ 436*. The Astrophysical Journal, 617(1), 580.
 3. Deming, D., et al. (2007). *Spitzer Transit and Secondary Eclipse Photometry of GJ 436b*. The Astrophysical Journal, 667(2), L199.
 
-```
+
